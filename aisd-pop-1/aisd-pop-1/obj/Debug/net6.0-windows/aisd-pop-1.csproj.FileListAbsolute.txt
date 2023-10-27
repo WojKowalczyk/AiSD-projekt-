@@ -1,0 +1,17 @@
+D:\166285\formscw1to\aisd-pop-1\aisd-pop-1\bin\Debug\net6.0-windows\aisd-pop-1.exe
+D:\166285\formscw1to\aisd-pop-1\aisd-pop-1\bin\Debug\net6.0-windows\aisd-pop-1.deps.json
+D:\166285\formscw1to\aisd-pop-1\aisd-pop-1\bin\Debug\net6.0-windows\aisd-pop-1.runtimeconfig.json
+D:\166285\formscw1to\aisd-pop-1\aisd-pop-1\bin\Debug\net6.0-windows\aisd-pop-1.dll
+D:\166285\formscw1to\aisd-pop-1\aisd-pop-1\bin\Debug\net6.0-windows\aisd-pop-1.pdb
+D:\166285\formscw1to\aisd-pop-1\aisd-pop-1\obj\Debug\net6.0-windows\aisd-pop-1.csproj.AssemblyReference.cache
+D:\166285\formscw1to\aisd-pop-1\aisd-pop-1\obj\Debug\net6.0-windows\aisd_pop_1.Form1.resources
+D:\166285\formscw1to\aisd-pop-1\aisd-pop-1\obj\Debug\net6.0-windows\aisd-pop-1.csproj.GenerateResource.cache
+D:\166285\formscw1to\aisd-pop-1\aisd-pop-1\obj\Debug\net6.0-windows\aisd-pop-1.GeneratedMSBuildEditorConfig.editorconfig
+D:\166285\formscw1to\aisd-pop-1\aisd-pop-1\obj\Debug\net6.0-windows\aisd-pop-1.AssemblyInfoInputs.cache
+D:\166285\formscw1to\aisd-pop-1\aisd-pop-1\obj\Debug\net6.0-windows\aisd-pop-1.AssemblyInfo.cs
+D:\166285\formscw1to\aisd-pop-1\aisd-pop-1\obj\Debug\net6.0-windows\aisd-pop-1.csproj.CoreCompileInputs.cache
+D:\166285\formscw1to\aisd-pop-1\aisd-pop-1\obj\Debug\net6.0-windows\aisd-pop-1.dll
+D:\166285\formscw1to\aisd-pop-1\aisd-pop-1\obj\Debug\net6.0-windows\refint\aisd-pop-1.dll
+D:\166285\formscw1to\aisd-pop-1\aisd-pop-1\obj\Debug\net6.0-windows\aisd-pop-1.pdb
+D:\166285\formscw1to\aisd-pop-1\aisd-pop-1\obj\Debug\net6.0-windows\aisd-pop-1.genruntimeconfig.cache
+D:\166285\formscw1to\aisd-pop-1\aisd-pop-1\obj\Debug\net6.0-windows\ref\aisd-pop-1.dll
