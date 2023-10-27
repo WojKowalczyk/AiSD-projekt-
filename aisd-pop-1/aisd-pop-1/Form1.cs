@@ -1,3 +1,5 @@
+using System;
+
 namespace aisd_pop_1
 {
     public partial class Form1 : Form
@@ -6,13 +8,15 @@ namespace aisd_pop_1
         int tyleLiczb;
         string liczby;
         int[] tablicaLiczb;
+        
         public Form1()
         {
             InitializeComponent();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            nmrcNumbersA.Value = 6;
+            textNumbersM.Enabled = false;
         }
         private void checkBox_auto_CheckedChanged(object sender, EventArgs e)
         {
@@ -34,8 +38,9 @@ namespace aisd_pop_1
 
         private void btnGen_Click(object sender, EventArgs e)
         {
+
             Random rnd = new Random();
-            int tyleLiczb = (int)nmrcNumbersA.Value;
+            tyleLiczb = (int)nmrcNumbersA.Value;
             tablicaLiczb = new int[tyleLiczb];
             for (int i = 0; i < tyleLiczb; i++)
             {
@@ -76,41 +81,90 @@ namespace aisd_pop_1
             {
                 zwroc += tablica[i].ToString() + " ";
             }
-            textNumbersM.Text = zwroc;
             return zwroc;
         }
         private void buttonSB_Click(object sender, EventArgs e)
         {
-            int wynik = 0;
-            bool another_one = true;
+            var watch = new System.Diagnostics.Stopwatch();
             int liczba_temp;
-            textNumbersSorted.Text = wynik.ToString();
-            while (another_one)
+            string debugg = "";
+            int[] tablicaLiczb_temp = new int[tyleLiczb];
+            tablicaLiczb_temp = (int[])tablicaLiczb.Clone();
+            watch.Start();
+            for (int j = 0; j < tyleLiczb; j++)
             {
-                another_one = false;
                 for (int i = 1; i < tyleLiczb; i++)
                 {
-                    if (tablicaLiczb[i] > tablicaLiczb[i - 1])
+                    
+                    if (tablicaLiczb_temp[i] < tablicaLiczb_temp[i - 1])
                     {
-                        liczba_temp = tablicaLiczb[i];
-                        tablicaLiczb[i] = tablicaLiczb[i - 1];
-                        tablicaLiczb[i - 1] = liczba_temp;
-                        another_one = true;
+                        liczba_temp = tablicaLiczb_temp[i];
+                        tablicaLiczb_temp[i] = tablicaLiczb_temp[i - 1];
+                        tablicaLiczb_temp[i - 1] = liczba_temp;
+                        
                     }
 
                 }
             }
-            MessageBox.Show(tablicaLiczb[0].ToString());
-            textNumbersSorted.Text = tablicaNaString(tablicaLiczb);
+            watch.Stop();
+            labelTime.Text = watch.Elapsed.ToString();
+            textNumbersSorted.Text = tablicaNaString(tablicaLiczb_temp);
 
         }
         private void buttonSS_Click(object sender, EventArgs e)
         {
-
+            var watch = new System.Diagnostics.Stopwatch();
+            int liczba_temp;
+            int[] tablicaLiczb_temp = new int[tyleLiczb];
+            tablicaLiczb_temp = (int[])tablicaLiczb.Clone();
+            
+            watch.Start();
+            for (int j = 0; j < tyleLiczb; j++)
+            {
+                int min = tablicaLiczb_temp[j];
+                int min_i = j;
+                for (int i = j + 1; i < tyleLiczb; i++)
+                {
+                    if (tablicaLiczb_temp[i] < min)
+                    {
+                        min = tablicaLiczb_temp[i];
+                        min_i = i;
+                    }
+                }
+                liczba_temp = tablicaLiczb_temp[j];
+                tablicaLiczb_temp[j] = tablicaLiczb_temp[min_i];
+                tablicaLiczb_temp[min_i] = liczba_temp;
+            }
+            watch.Stop();
+            labelTime.Text = watch.Elapsed.ToString();
+            textNumbersSorted.Text = tablicaNaString(tablicaLiczb_temp);
         }
         private void buttonSI_Click(object sender, EventArgs e)
         {
+            var watch = new System.Diagnostics.Stopwatch();
+            int liczba_temp;
+            int[] tablicaLiczb_temp = new int[tyleLiczb];
+            tablicaLiczb_temp = (int[])tablicaLiczb.Clone();
 
+            watch.Start();
+            for (int i = 1; i < tyleLiczb; i++)
+            {
+                int tutaj = tablicaLiczb_temp[i];
+                bool dawaj = false;
+                for (int j = i - 1; j >= 0 && dawaj == false;)
+                {
+                    if (tutaj < tablicaLiczb_temp[j])
+                    {
+                        tablicaLiczb_temp[j + 1] = tablicaLiczb_temp[j];
+                        j--;
+                        tablicaLiczb_temp[j + 1] = tutaj;
+                    }
+                    else dawaj = true;
+                }
+            }
+            watch.Stop();
+            labelTime.Text = watch.Elapsed.ToString();
+            textNumbersSorted.Text = tablicaNaString(tablicaLiczb_temp);
         }
         private void buttonSM_Click(object sender, EventArgs e)
         {
