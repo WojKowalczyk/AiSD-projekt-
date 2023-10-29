@@ -167,6 +167,7 @@
             buttonSQ.TabIndex = 13;
             buttonSQ.Text = "SQ";
             buttonSQ.UseVisualStyleBackColor = true;
+            buttonSQ.Click += buttonSQ_Click;
             // 
             // Form1
             // 

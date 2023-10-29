@@ -211,9 +211,50 @@ namespace aisd_pop_1
             labelTime.Text = watch.Elapsed.ToString();
             textNumbersSorted.Text = tablicaNaString(tablicaLiczb_temp);
         }
+
+        private int[] quickquick(int[] a, int lew, int praw)
+        {
+            int i = lew;
+            int j = praw;
+            int pivot = a[lew];
+            while (i <= j)
+            {
+                while (a[i] < pivot)
+                {
+                    i++;
+                }
+                while (a[j] > pivot)
+                {
+                    j--;
+                }
+                if (i <= j)
+                {
+                    int temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                    i++;
+                    j--;
+                }
+            }
+
+            if (lew < j)
+                quickquick(a, lew, j);
+            if (i < praw)
+                quickquick(a, i, praw);
+            return a;
+        }
         private void buttonSQ_Click(object sender, EventArgs e)
         {
+            var watch = new System.Diagnostics.Stopwatch();
+            int liczba_temp;
+            int[] tablicaLiczb_temp = new int[tyleLiczb];
+            tablicaLiczb_temp = (int[])tablicaLiczb.Clone();
 
+            watch.Start();
+            tablicaLiczb_temp = quickquick(tablicaLiczb_temp, 0, tablicaLiczb_temp.Length - 1);
+            watch.Stop();
+            labelTime.Text = watch.Elapsed.ToString();
+            textNumbersSorted.Text = tablicaNaString(tablicaLiczb_temp);
         }
 
         private void buttonSI_Click_1(object sender, EventArgs e)
