@@ -145,6 +145,7 @@
             buttonSI.TabIndex = 11;
             buttonSI.Text = "SI";
             buttonSI.UseVisualStyleBackColor = true;
+            buttonSI.Click += buttonSI_Click_1;
             // 
             // buttonSM
             // 
@@ -155,6 +156,7 @@
             buttonSM.TabIndex = 12;
             buttonSM.Text = "SM";
             buttonSM.UseVisualStyleBackColor = true;
+            buttonSM.Click += buttonSM_Click_1;
             // 
             // buttonSQ
             // 
