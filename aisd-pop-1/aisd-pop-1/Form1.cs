@@ -1,4 +1,5 @@
 using System;
+using System.IO.Pipes;
 
 namespace aisd_pop_1
 {
@@ -8,6 +9,7 @@ namespace aisd_pop_1
         int tyleLiczb;
         string liczby;
         int[] tablicaLiczb;
+
 
         public Form1()
         {
@@ -46,12 +48,12 @@ namespace aisd_pop_1
             {
                 tablicaLiczb[i] = rnd.Next(1000);
             }
-            liczby = "";
-            for (int i = 0; i < tyleLiczb; i++)
-            {
-                liczby += tablicaLiczb[i].ToString() + " ";
-            }
-            textNumbersM.Text = liczby;
+            //liczby = "";
+            //for (int i = 0; i < tyleLiczb; i++)
+            //{
+            //    liczby += tablicaLiczb[i].ToString() + " ";
+            //}
+            //textNumbersM.Text = liczby;
         }
         private void labelTime_Click(object sender, EventArgs e)
         {
@@ -61,9 +63,25 @@ namespace aisd_pop_1
         {
 
         }
+        int[] napisNaTablice(string napis)
+        {
+            var LiczbyS = napis.Trim().Split(' ');
+            tablicaLiczb = new int[LiczbyS.Length];
+            tyleLiczb = (int)LiczbyS.Length;
+            for (int i = 0; i < LiczbyS.Length; i++)
+            {
+                tablicaLiczb[i] = int.Parse(LiczbyS[i]);
+            }
+            return tablicaLiczb;
+            
+        }
         private void textNumbersM_TextChanged(object sender, EventArgs e)
         {
-
+            string napisDoTablicy = textNumbersM.Text;
+            tablicaLiczb = napisNaTablice(napisDoTablicy);
+            //string costam = tablicaNaString(tablicaLiczb);
+            
+            
         }
         private void textNumbersSorted_TextChanged(object sender, EventArgs e)
         {
@@ -109,7 +127,6 @@ namespace aisd_pop_1
             watch.Stop();
             labelTime.Text = watch.Elapsed.ToString();
             textNumbersSorted.Text = tablicaNaString(tablicaLiczb_temp);
-
         }
         private void buttonSS_Click(object sender, EventArgs e)
         {
@@ -176,7 +193,7 @@ namespace aisd_pop_1
 
         private int[] sortMerg(int[] a)
         {
-            if(a.Length <= 1)
+            if (a.Length <= 1)
             {
                 return a;
             }
@@ -288,6 +305,6 @@ namespace aisd_pop_1
             textNumbersSorted.Text = tablicaNaString(tablicaLiczb_temp);
         }
 
-        
+
     }
 }

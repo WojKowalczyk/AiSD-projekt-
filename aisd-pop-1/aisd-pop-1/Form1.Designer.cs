@@ -78,6 +78,7 @@
             // 
             nmrcNumbersA.Location = new Point(385, 41);
             nmrcNumbersA.Margin = new Padding(3, 4, 3, 4);
+            nmrcNumbersA.Maximum = new decimal(new int[] { 2000000, 0, 0, 0 });
             nmrcNumbersA.Name = "nmrcNumbersA";
             nmrcNumbersA.Size = new Size(137, 27);
             nmrcNumbersA.TabIndex = 5;
